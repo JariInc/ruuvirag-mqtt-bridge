@@ -6,3 +6,4 @@ ENV
 .env
 *.swp
 
+supervisord.log
