@@ -10,8 +10,3 @@ class MQTTClient(object):
 
 	def publish(self, topic, payload):
 		self.client.publish(topic, payload)
-
-if __name__ == '__main__':
-	client = MQTTClient('foo')
-	client.connect('192.168.1.171', 1883)
-	client.publish('bar', 107);

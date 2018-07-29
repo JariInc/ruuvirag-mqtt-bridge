@@ -6,6 +6,3 @@ def getMeasurement(mac):
 	state = sensor.update()
 	return sensor.state
 
-if __name__ == '__main__':
-	for mac in sys.argv[1:]:
-		print(getMeasurement(mac))
