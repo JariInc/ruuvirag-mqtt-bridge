@@ -1,3 +1,4 @@
+import logging
 import paho.mqtt.client as mqtt
 
 class MQTTClient(object):
@@ -8,6 +9,7 @@ class MQTTClient(object):
 
 	def connect(self, address, port):
 		self.client = mqtt.Client(self.client_id)
+		self.client.enable_logger(logging.getLogger('ruuvitag-mqtt-bridge.mqtt'))
 		self.client.connect(address, port, self.keepalive)
 		self.client.reconnect_delay_set(5, 600)
 
