@@ -1,13 +1,5 @@
-import sys
-import logging
-from ruuvitag_sensor.ruuvitag import RuuviTag
+from ruuvitag_sensor.ruuvi import RuuviTagSensor
 
-log = logging.getLogger('ruuvitag-mqtt-bridge.ruuvitag')
-
-def getMeasurements(mac):
-	log.debug('Waiting %s', mac)
-	sensor = RuuviTag(mac)
-	state = sensor.update()
-	log.debug('%s returned %s', mac, state)
-
-	return sensor.state
+class Ruuvitag(object):
+	def __init__(self, macs, callback):
+		RuuviTagSensor.get_datas(callback)
